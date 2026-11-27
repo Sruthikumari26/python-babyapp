@@ -79,6 +79,7 @@ LESSONS = {
             ("Bird", "🐦", "A bird says tweet, tweet!", "bird"),
         ],
     },
+}
 # Tiny local sound generator: playful tones and rhythms, no downloaded files.
 def make_sound(kind, folder):
     path = os.path.join(folder, kind + ".wav")
