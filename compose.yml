@@ -1,8 +1,21 @@
 ---
-service:
-    python-babyapp:
-    container-name:pythonbabyapp
-    build:
-    context: .
-    dockerfile:Dockerfile
+services:
+  python-babyapp:
+    container_name: pythonbabyapp
+    image: sruthikumari94/pythonapp:latest
+
+    ports:
+      - "1111:8080"
+
+    deploy:
+      replicas: 1
+      resources:
+        reservations:
+          cpus: "1.0"
+          memory: 100M
+        limits:
+          cpus: "1.0"
+          memory: 200M
+
+
     
