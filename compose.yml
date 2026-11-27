@@ -2,7 +2,7 @@
 services:
   python-babyapp:
     container_name: pythonbabyapp
-    image: sruthikumari94/pythonapp:latest
+    image: sruthikumari94//babylearningapplication:latest
 
     ports:
       - "1113:5000"
