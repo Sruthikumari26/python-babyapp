@@ -1,6 +1,6 @@
 ---
 services:
-  python-babyapp
+  python-babyapp:
     image: sruthikumari94/babylearningapplication:latest
     ports:
       - "1113:5000"
