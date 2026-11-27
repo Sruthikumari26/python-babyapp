@@ -50,19 +50,26 @@ class AudioManager:
 
         except Exception as error:
             print("Audio error:", error)
-            def play_item(self, item):
+            
+def play_item(self, item):
+    """Speak a fun, baby-friendly vehicle name when tapped."""
+
     name = item["name"]
 
-    sound_path = item.get("sound")
+    pronunciations = {
+        "Car": "Caaaaaaarrrrr!",
+        "Bus": "Buuuuuus!",
+        "Train": "Traaaaaain!",
+        "Airplane": "Aaaaaairplaaaane!",
+        "Ship": "Shiiiiip!",
+        "Bicycle": "Biiiiicycle!",
+        "Truck": "Truuuuuck!",
+        "Helicopter": "Heliiiiicopter!",
+    }
 
-    if sound_path and os.path.isfile(sound_path):
-        self.play_sound(sound_path)
-    else:
-        print("Sound file missing:", sound_path)
+    message = pronunciations.get(name, name)
 
-    self.speak(name)
+    self.speak(message)
 
-        message = f"{name}... {spelling}... {name}!"
-
-        self.speak(message)
-
+            
+      
