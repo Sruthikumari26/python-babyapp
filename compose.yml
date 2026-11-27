@@ -5,7 +5,7 @@ services:
     image: sruthikumari94/pythonapp:latest
 
     ports:
-      - "1111:8080"
+      - "1111:5000"
 
     deploy:
       replicas: 1
