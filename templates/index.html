@@ -1,20 +1,73 @@
-
+cat > templates/index.html <<'HTML'
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Baby Learning School</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Welcome to Baby Learning School!</h1>
-    <h2>Learn Animals, Vehicles and Numbers</h2>
+    <header>
+        <h1>🐣 Baby Learning School 🐣</h1>
+        <p>Tap a picture and learn something new!</p>
+    </header>
 
-    <h3>Animals</h3>
-    <p>Learn about Lion, Elephant, Dog, Cat and more!</p>
+    <nav>
+        <a href="#animals">🐯 Animals</a>
+        <a href="#vehicles">🚗 Vehicles</a>
+        <a href="#numbers">🔢 Numbers</a>
+    </nav>
 
-    <h3>Vehicles</h3>
-    <p>Learn about Car, Bus, Train and more!</p>
+    <main>
+        <section id="animals">
+            <h2>🐯 Learn Animals</h2>
+            <div class="cards">
+                {% for animal in animals %}
+                <button class="card"
+                    onclick="playAnimal('{{ animal.name }}', '{{ animal.sound }}')">
+                    <img src="/assets/{{ animal.image }}"
+                         alt="{{ animal.name }}">
+                    <h3>{{ animal.name }}</h3>
+                    <span>🔊 Tap to hear</span>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
 
-    <h3>Numbers</h3>
-    <p>Learn numbers from 1 to 10!</p>
+        <section id="vehicles">
+            <h2>🚗 Learn Vehicles</h2>
+            <div class="cards">
+                {% for vehicle in vehicles %}
+                <button class="card"
+                    onclick="speak('{{ vehicle.name }}')">
+                    <img src="/assets/transports/{{ vehicle.image }}"
+                         alt="{{ vehicle.name }}">
+                    <h3>{{ vehicle.name }}</h3>
+                    <span>🔊 Tap to hear</span>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="numbers">
+            <h2>🔢 Learn Numbers</h2>
+            <div class="cards number-cards">
+                {% for number in numbers %}
+                <button class="card number-card"
+                    onclick="speakNumber({{ number }})">
+                    <div class="number-picture">{{ number }}</div>
+                    <h3>Number {{ number }}</h3>
+                    <span>🔊 Tap to hear</span>
+                </button>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <audio id="animalAudio"></audio>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
+HTML
