@@ -1,129 +1,192 @@
+# 🐣 Baby Learning School
 
-# 🌈 Baby Learning School
+A colorful, interactive, and child-friendly Python web application designed to help babies and young children learn animals, vehicles, and numbers through pictures, sounds, and speech.
 
-A colorful Python learning application for babies and toddlers, built using Kivy.
+## 🌟 Features
 
-## Features
+### 🦁 1. Learn Animals
+- Eight colorful animal pictures.
+- Individual animal audio files.
+- Click an animal picture to hear its sound.
+- Animals included:
+  - Lion
+  - Elephant
+  - Dog
+  - Cat
+  - Giraffe
+  - Monkey
+  - Bird
+  - Rabbit
 
-- Learn animal names.
-- Learn transport names.
-- Learn numbers from 1 to 10.
-- Large, colorful touch-friendly buttons.
-- Text-to-speech for learning words.
-- Optional animal sound effects.
-- Desktop and Android project support.
-- Docker and Jenkins CI pipeline.
+### 🚗 2. Learn Vehicles
+- Eight individual vehicle pictures.
+- Click a vehicle to hear its name.
+- Uses browser Text-to-Speech.
+- Vehicles included:
+  - Car
+  - Bus
+  - Train
+  - Airplane
+  - Ship
+  - Bicycle
+  - Truck
+  - Helicopter
 
-## Project Structure
+### 🔢 3. Learn Numbers
+- Numbers from 1 to 10.
+- Large, colorful number displays.
+- Click a number to hear its pronunciation.
+- Uses browser Text-to-Speech.
+
+## 🛠️ Technologies Used
+
+- Python
+- Flask
+- HTML5
+- CSS3
+- JavaScript
+- Web Speech API
+- Docker
+- Docker Compose
+
+## 📁 Project Structure
 
 ```text
-baby_learning_school/
-├── main.py
-├── lessons.py
-├── audio.py
-├── ui_components.py
+python-babyapp/
+│
+├── app.py
 ├── requirements.txt
 ├── Dockerfile
-├── Jenkinsfile
 ├── compose.yml
-├── buildozer.spec
-├── .dockerignore
 ├── README.md
-├── screens/
-│   ├── __init__.py
-│   ├── common.py
-│   ├── home.py
-│   ├── animals.py
-│   ├── transport.py
-│   └── numbers.py
-├── assets/
-│   ├── images/
-│   │   ├── animals/
-│   │   ├── transport/
-│   │   └── numbers/
-│   └── sounds/
-│       ├── animals/
-│       ├── transport/
-│       └── numbers/
-└── tests/
-    └── test_lessons.py
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── assets/
+    ├── images/
+    │   └── animals/
+    │       ├── lion.png
+    │       ├── elephant.png
+    │       ├── dog.png
+    │       ├── cat.png
+    │       ├── giraffe.png
+    │       ├── monkey.png
+    │       ├── bird.png
+    │       └── rabbit.png
+    │
+    ├── transports/
+    │   ├── car.png
+    │   ├── bus.png
+    │   ├── train.png
+    │   ├── airplane.png
+    │   ├── ship.png
+    │   ├── bicycle.png
+    │   ├── truck.png
+    │   └── helicopter.png
+    │
+    └── sounds/
+        ├── lion.mp3.wav
+        ├── elephant.mp3
+        ├── dog.mp3
+        ├── cat.mp3
+        ├── giraffe.mp3
+        ├── monkey.mp3
+        ├── bird.wav
+        └── rabbit.mp3
 ```
 
-## Install Python packages
+## 💻 Run Locally
+
+### Step 1: Clone the repository
 
 ```bash
-python -m pip install -r requirements.txt
+git clone https://github.com/YOUR_USERNAME/python-babyapp.git
+cd python-babyapp
 ```
 
-## Run the application
+### Step 2: Install dependencies
 
 ```bash
-python main.py
+pip install -r requirements.txt
 ```
 
-## Add animal sounds
+### Step 3: Start the application
 
-Place WAV files in:
+```bash
+python app.py
+```
+
+### Step 4: Open in browser
 
 ```text
-assets/sounds/animals/
+http://localhost:5000
 ```
 
-Use these filenames:
+## 🐳 Run Using Docker
 
-- lion.wav
-- elephant.wav
-- dog.wav
-- cat.wav
-- cow.wav
-- monkey.wav
-- bird.wav
-- duck.wav
-
-The filenames must match the paths in `lessons.py`.
-
-## Run unit tests
+### Step 1: Build Docker image
 
 ```bash
-python -m unittest discover -s tests -v
+docker build -t babylearningapp:latest .
 ```
 
-## Build Docker image
+### Step 2: Run Docker container
 
 ```bash
-docker build -t sruthikumari94/baby-learning-school:latest .
+docker run -d \
+  --name babyapp-test \
+  -p 1113:5000 \
+  babylearningapp:latest
 ```
 
-## Run tests using Docker Compose
+### Step 3: Verify container
 
 ```bash
-docker compose up --build
+docker ps
 ```
 
-## Android APK
-
-Install Buildozer in a supported Linux environment and run:
+### Step 4: View application logs
 
 ```bash
-buildozer android debug
+docker logs babyapp-test
 ```
 
-The generated APK will be placed in the `bin/` directory.
+### Step 5: Access the application
 
-## Jenkins
+Open your browser:
 
-Configure a Jenkins Pipeline job using:
+```text
+http://YOUR_SERVER_PUBLIC_IP:1113
+```
 
-- Repository: Sruthikumari26
-- Branch: `*/main`
-- Script path: `Jenkinsfile`
-- Agent label: `prod`
-- Docker Hub credential ID:sruthikumari94
+Make sure inbound TCP port 1113 is allowed in your server firewall or cloud security group.
 
-The Jenkins agent needs Python 3 and Docker access.
+## 📦 Docker Hub
 
-## Note
+Docker image:
 
-The Docker image is intended for building and testing the application.
-To display the Kivy graphical interface, run the app on a desktop with a
-working graphical display or package it for Android.
+```text
+sruthikumari94/babylearningapp:latest
+```
+
+Push the image to Docker Hub:
+
+```bash
+docker login
+docker push sruthikumari94/babylearningapp:latest
+```
+
+Pull the image:
+
+```bash
+docker pull sruthikumari94/babylearningapp:latest
+```
+
+## 🎵 Audio Functionality
+
+-
