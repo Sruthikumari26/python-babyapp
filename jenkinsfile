@@ -1,0 +1,50 @@
+pipeline {
+    agent {
+        node {
+            label 'prod'
+        }
+    }
+    stages{
+        stage('code'){
+            steps{
+                git branch :'main' , url:'https://github.com/Sruthikumari26/python-babyapp.git'
+            }
+        }
+        stage('CQA'){
+            steps{
+                script{
+                    def scannerHome = tool 'mysonar';
+                    withSonarQubeEnv('mysonar') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+        stage('qualitygates'){
+            steps{
+                waitForQualityGate abortPipeline:true, credentialsId: 'sonar-id'
+            }
+        }
+        stage('image'){
+            steps{
+                sh 'docker build -t sruthikumari94/babylearningapp:latest .'
+            }
+        }
+        stage('scan'){
+            steps{
+                sh 'trivy image sruthikumari94/babylearningapp:latest'
+            }
+        }
+        stage('push'){
+            steps{
+                sh'docker tag sruthikumari94/babylearningapp:latest sruthikumari94/babylearningapplication:latest ' 
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh'docker stack deploy babyapp --compose-file=compose.yml'
+            }
+        }
+    }
+    
+}
