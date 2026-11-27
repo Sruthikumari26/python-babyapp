@@ -1,0 +1,8 @@
+---
+service:
+    python-babyapp:
+    container-name:pythonbabyapp
+    build:
+    context: .
+    dockerfile:Dockerfile
+    
