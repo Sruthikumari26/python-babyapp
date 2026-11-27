@@ -1,0 +1,1 @@
+Bundled original synthesized animal-style sound effects (WAV, mono, 22050 Hz).\nFiles: lion.wav, elephant.wav, giraffe.wav, monkey.wav, rabbit.wav, cat.wav, dog.wav, bird.wav.\nNote: these are synthesized approximations, not field recordings. Giraffes are usually quiet; giraffe.wav is a gentle leafy-munch/rustle cue rather than a biological call.\n
