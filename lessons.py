@@ -10,48 +10,50 @@ ANIMALS = [
     {"name": "Rabbit", "emoji": "🦆", "sound": "assets/sounds/animals/rabbit.mp3"},
 ]
 
+
 TRANSPORT = [
     {
         "name": "Car",
         "emoji": "🚗",
-        "sound": "assets/sounds/transport/car.wav"
+        "image": "assets/transports/car.png"
     },
     {
         "name": "Bus",
         "emoji": "🚌",
-        "sound": "assets/sounds/transport/bus.wav"
+        "image": "assets/transports/bus.png"
     },
     {
         "name": "Train",
         "emoji": "🚂",
-        "sound": "assets/sounds/transport/train.wav"
+        "image": "assets/transports/train.png"
     },
     {
         "name": "Airplane",
         "emoji": "✈️",
-        "sound": "assets/sounds/transport/airplane.wav"
+        "image": "assets/transports/airplane.png"
     },
     {
         "name": "Ship",
         "emoji": "🚢",
-        "sound": "assets/sounds/transport/ship.wav"
+        "image": "assets/transports/ship.png"
     },
     {
         "name": "Bicycle",
         "emoji": "🚲",
-        "sound": "assets/sounds/transport/bicycle.wav"
+        "image": "assets/transports/bicycle.png"
     },
     {
         "name": "Truck",
         "emoji": "🚚",
-        "sound": "assets/sounds/transport/truck.wav"
+        "image": "assets/transports/truck.png"
     },
     {
         "name": "Helicopter",
         "emoji": "🚁",
-        "sound": "assets/sounds/transport/helicopter.wav"
+        "image": "assets/transports/helicopter.png"
     },
 ]
+
 
 NUMBERS = [
     {"name": str(number), "emoji": str(number)}
