@@ -73,29 +73,12 @@ LESSONS = {
         "items": [
             ("Dog", "🐶", "A dog says woof, woof!", "dog"),
             ("Cat", "🐱", "A cat says meow!", "cat"),
-            ("Cow", "🐮", "A cow says moo!", "cow"),
-            ("Duck", "🦆", "A duck says quack, quack!", "duck"),
+            ("monkey", "🐮", "A monkey says kroo kroo!", "monkey"),
+            ("elephant", "🦆", "A elephant says yaah,yaah!", "elephant"),
             ("Lion", "🦁", "A lion says roar!", "lion"),
             ("Bird", "🐦", "A bird says tweet, tweet!", "bird"),
         ],
     },
-    "Numbers": {
-        "icon": "🔢", "intro": "Let's look at numbers together!",
-        "items": [
-            ("One", "1", "One. One little star.", "number"),
-            ("Two", "2", "Two. Two little dots.", "number"),
-            ("Three", "3", "Three. One, two, three!", "number"),
-            ("Four", "4", "Four. Four little flowers.", "number"),
-            ("Five", "5", "Five. Five little fingers.", "number"),
-            ("Six", "6", "Six. Let's count to six.", "number"),
-            ("Seven", "7", "Seven. Seven little stars.", "number"),
-            ("Eight", "8", "Eight. Eight little dots.", "number"),
-            ("Nine", "9", "Nine. Nearly ten!", "number"),
-            ("Ten", "10", "Ten! Well done!", "number"),
-        ],
-    },
-}
-
 # Tiny local sound generator: playful tones and rhythms, no downloaded files.
 def make_sound(kind, folder):
     path = os.path.join(folder, kind + ".wav")
