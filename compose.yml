@@ -3,10 +3,8 @@ services:
   python-babyapp:
     container_name:babyapp
     image: sruthikumari94/babylearningapplication:latest
-
     ports:
       - "1113:5000"
-
     deploy:
       replicas: 1
       resources:
