@@ -53,18 +53,9 @@ TRANSPORT = [
         "image": "assets/transports/helicopter.png"
     },
 ]
-
-
-NUMBERS = [
-    {"name": str(number), "emoji": str(number)}
-    for number in range(1, 11)
-]
-
-
 def get_lesson(category):
     lessons = {
         "animals": ANIMALS,
-        "transport": TRANSPORT,
-        "numbers": NUMBERS,
+        "transport": TRANSPORT
     }
     return lessons.get(category.lower(), [])
