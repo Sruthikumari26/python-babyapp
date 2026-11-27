@@ -50,13 +50,17 @@ class AudioManager:
 
         except Exception as error:
             print("Audio error:", error)
+            def play_item(self, item):
+    name = item["name"]
 
-    def play_item(self, item):
-        """Teach the name and spelling when a picture is tapped."""
+    sound_path = item.get("sound")
 
-        name = item["name"]
+    if sound_path and os.path.isfile(sound_path):
+        self.play_sound(sound_path)
+    else:
+        print("Sound file missing:", sound_path)
 
-        spelling = "... ".join(list(name.upper()))
+    self.speak(name)
 
         message = f"{name}... {spelling}... {name}!"
 
