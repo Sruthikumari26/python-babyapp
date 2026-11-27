@@ -1,31 +1,40 @@
 import os
-
 from kivy.core.audio import SoundLoader
 from kivy.utils import platform
 
 
 class AudioManager:
+
     def __init__(self):
         self.current_sound = None
+        self.engine = None
+
+        # Initialize desktop speech engine once
+        if platform != "android":
+            try:
+                import pyttsx3
+                self.engine = pyttsx3.init()
+                self.engine.setProperty("rate", 125)
+                self.engine.setProperty("volume", 1.0)
+            except Exception as error:
+                print("TTS initialization error:", error)
 
     def speak(self, text):
-        """Speak a word using the device's text-to-speech engine."""
+        """Speak slowly and clearly for baby learning."""
         try:
             if platform == "android":
                 from plyer import tts
                 tts.speak(text)
-            else:
-                import pyttsx3
 
-                engine = pyttsx3.init()
-                engine.say(text)
-                engine.runAndWait()
-                engine.stop()
+            elif self.engine:
+                self.engine.say(text)
+                self.engine.runAndWait()
+
         except Exception as error:
             print("Speech error:", error)
 
     def play_sound(self, sound_path):
-        """Play a WAV or other supported audio file."""
+        """Play an optional individual audio recording."""
         if not sound_path or not os.path.isfile(sound_path):
             print("Sound file not found:", sound_path)
             return
@@ -38,16 +47,18 @@ class AudioManager:
 
             if self.current_sound:
                 self.current_sound.play()
-            else:
-                print("Unable to load sound:", sound_path)
 
         except Exception as error:
             print("Audio error:", error)
 
     def play_item(self, item):
-        """Speak the name and play its sound when available."""
-        self.speak(item["name"])
+        """Teach the name and spelling when a picture is tapped."""
 
-        sound_path = item.get("sound")
-        if sound_path:
-            self.play_sound(sound_path)
+        name = item["name"]
+
+        spelling = "... ".join(list(name.upper()))
+
+        message = f"{name}... {spelling}... {name}!"
+
+        self.speak(message)
+
