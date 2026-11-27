@@ -1,24 +1,56 @@
 
 ANIMALS = [
-    {"name": "Lion", "emoji": "🦁", "sound": "assets/sounds/animals/lion.wav"},
-    {"name": "Elephant", "emoji": "🐘", "sound": "assets/sounds/animals/elephant.wav"},
-    {"name": "Dog", "emoji": "🐶", "sound": "assets/sounds/animals/dog.wav"},
-    {"name": "Cat", "emoji": "🐱", "sound": "assets/sounds/animals/cat.wav"},
-    {"name": "Cow", "emoji": "🐮", "sound": "assets/sounds/animals/cow.wav"},
-    {"name": "Monkey", "emoji": "🐵", "sound": "assets/sounds/animals/monkey.wav"},
+    {"name": "Lion", "emoji": "🦁", "sound": "assets/sounds/animals/lion.mp3"},
+    {"name": "Elephant", "emoji": "🐘", "sound": "assets/sounds/animals/elephant.mp3"},
+    {"name": "Dog", "emoji": "🐶", "sound": "assets/sounds/animals/dog.mp3"},
+    {"name": "Cat", "emoji": "🐱", "sound": "assets/sounds/animals/cat.mp3"},
+    {"name": "giraffe", "emoji": "🐮", "sound": "assets/sounds/animals/giraffe.mp3"},
+    {"name": "Monkey", "emoji": "🐵", "sound": "assets/sounds/animals/monkey.mp3"},
     {"name": "Bird", "emoji": "🐦", "sound": "assets/sounds/animals/bird.wav"},
-    {"name": "Duck", "emoji": "🦆", "sound": "assets/sounds/animals/duck.wav"},
+    {"name": "Rabbit", "emoji": "🦆", "sound": "assets/sounds/animals/rabbit.mp3"},
 ]
 
 TRANSPORT = [
-    {"name": "Car", "emoji": "🚗"},
-    {"name": "Bus", "emoji": "🚌"},
-    {"name": "Train", "emoji": "🚂"},
-    {"name": "Airplane", "emoji": "✈️"},
-    {"name": "Ship", "emoji": "🚢"},
-    {"name": "Bicycle", "emoji": "🚲"},
-    {"name": "Truck", "emoji": "🚚"},
-    {"name": "Helicopter", "emoji": "🚁"},
+    {
+        "name": "Car",
+        "emoji": "🚗",
+        "sound": "assets/sounds/transport/car.wav"
+    },
+    {
+        "name": "Bus",
+        "emoji": "🚌",
+        "sound": "assets/sounds/transport/bus.wav"
+    },
+    {
+        "name": "Train",
+        "emoji": "🚂",
+        "sound": "assets/sounds/transport/train.wav"
+    },
+    {
+        "name": "Airplane",
+        "emoji": "✈️",
+        "sound": "assets/sounds/transport/airplane.wav"
+    },
+    {
+        "name": "Ship",
+        "emoji": "🚢",
+        "sound": "assets/sounds/transport/ship.wav"
+    },
+    {
+        "name": "Bicycle",
+        "emoji": "🚲",
+        "sound": "assets/sounds/transport/bicycle.wav"
+    },
+    {
+        "name": "Truck",
+        "emoji": "🚚",
+        "sound": "assets/sounds/transport/truck.wav"
+    },
+    {
+        "name": "Helicopter",
+        "emoji": "🚁",
+        "sound": "assets/sounds/transport/helicopter.wav"
+    },
 ]
 
 NUMBERS = [
