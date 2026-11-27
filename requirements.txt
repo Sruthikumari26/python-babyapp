@@ -1,1 +1,3 @@
+cat > requirements.txt <<'TXT'
 Flask>=3.0.0
+TXT
